@@ -1,7 +1,18 @@
+import java.util.ArrayList;
+
 public class CarApp {
     public static void main(String[] args){
+        ArrayList<Car> carArray = new ArrayList<Car>();
+
+        Car carPor = new Car("Porche", "blue", " is parked");
+        carArray.add(carPor);
+
+
         Car carJetta = new Car("Jetta", "blue");
-        Car carPor = new Car("Porche", "red", "");
+        carPor = new Car("Porche", "red", "");
+
+        carArray.add(carJetta);
+        carArray.add(carPor);
 
         carJetta.start();
         carPor.start();
@@ -22,9 +33,12 @@ public class CarApp {
         carPor.gotodestination("an airport");
 
         carJetta.stop();
-        carPor.stop();
+        // carPor.stop();
 
 
+        System.out.println("\n\nThe status of cars are...");
+        for (Car item : carArray)
+            item.printInfo();
 
     }
 }
